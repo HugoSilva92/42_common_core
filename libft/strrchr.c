@@ -1,6 +1,16 @@
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   strrchr.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/01 11:54:39 by huolivei          #+#    #+#             */
+/*   Updated: 2022/11/01 11:54:39 by huolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 
 char *strrchr(const char *str, int c)
 {
@@ -14,17 +24,4 @@ char *strrchr(const char *str, int c)
     if (i == 0 && str[i] != c)
         return (0);
     return ((char *)str + i);
-}
-
-int main () {
-   int len;
-   const char str[] = ",ttp://www.tutorialspoint.com";
-   const char ch = ',';
-   char *ret;
-
-   ret = strrchr(str, ch);
-
-   printf("String after |%c| is - |%s|\n", ch, ret);
-   
-   return(0);
 }

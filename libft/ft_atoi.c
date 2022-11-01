@@ -1,5 +1,16 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/01 11:52:41 by huolivei          #+#    #+#             */
+/*   Updated: 2022/11/01 11:52:41 by huolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 int ft_atoi(const char *str)
 {
@@ -27,14 +38,3 @@ int ft_atoi(const char *str)
     }
     return (result * sign);
 }
-
-int main()  
-{  
-    int val, val1;  
-    char string1[] = "-99a898989"; 
-    char string2[] = "-99a898989";  
-    val = atoi(string1);
-    val1 = ft_atoi(string2)  ;
-    printf("String value = %d\n", val);  
-    printf("Integer value = %d\n", val1);  
-}  

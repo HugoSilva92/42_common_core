@@ -1,5 +1,16 @@
-#include <stdio.h>
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/01 11:52:56 by huolivei          #+#    #+#             */
+/*   Updated: 2022/11/01 11:52:56 by huolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 void    *ft_memccpy(void *dest, const void *src, int c, size_t n)
 {
@@ -16,21 +27,4 @@ void    *ft_memccpy(void *dest, const void *src, int c, size_t n)
         i++;
     }
     return (0);
-}
-
-
-int main( void ) {
-
-   char buffer[61];
-   char puffer[61];
-   char *pdest;
-   char *ft_pdest;
-   char string1[60] = "Taj Mahal is a historic monument in India.";
-   printf( "Function: _memccpy 42 characters or to character 'c'\n" );
-   printf( "Source: %s\n", string1 );
-   pdest = _memccpy( buffer, string1, 'c', 42);
-   ft_pdest = ft_memccpy( puffer, string1, 'c', 42);
-   *pdest = '\0';
-   printf( "Result: %s\n", buffer );
-   printf( "Result: %s\n", puffer );
 }

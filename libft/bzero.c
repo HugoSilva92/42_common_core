@@ -1,5 +1,16 @@
-#include <stdio.h>
-#include <strings.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   bzero.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/01 11:52:12 by huolivei          #+#    #+#             */
+/*   Updated: 2022/11/01 11:52:12 by huolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 void    bzero(void *s, size_t n)
 {
@@ -13,12 +24,4 @@ void    bzero(void *s, size_t n)
         tt[i] = '\0';
         i++;
     }
-}
-
-int main()
-{
-    char qq[] = "ola tudo bem";
-    
-    bzero(qq, 12);
-    printf("%s", qq);
 }

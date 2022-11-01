@@ -1,5 +1,16 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   memset.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/01 11:54:13 by huolivei          #+#    #+#             */
+/*   Updated: 2022/11/01 11:54:13 by huolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "libft.h"
 
 void    *ft_memset(void *str, int c, size_t n)
 {
@@ -14,14 +25,4 @@ void    *ft_memset(void *str, int c, size_t n)
         i++;
     }
     return ((void *)str1);
-}
-
-int main()
-{
-    char s[] = "ola aorac";
-    char c = 'c';
-    char *tt;
-
-    tt = ft_memset(s, c, 3);
-    printf("%s", tt);
 }
