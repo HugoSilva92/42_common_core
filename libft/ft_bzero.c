@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bzero.c                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <huolivei@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 12:38:05 by huolivei          #+#    #+#             */
-/*   Updated: 2022/11/01 12:38:05 by huolivei         ###   ########.fr       */
+/*   Created: 2022/11/02 12:30:50 by huolivei          #+#    #+#             */
+/*   Updated: 2022/11/02 18:16:45 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    size_t  i;
-    char *tt;
+	size_t	i;
+	char	*tt;
 
-    i = 0;
-    tt = s;
-    while (i < n)
-    {
-        tt[i] = '\0';
-        i++;
-    }
+	i = 0;
+	tt = s;
+	while (i < n)
+	{
+		tt[i] = '\0';
+		i++;
+	}
 }

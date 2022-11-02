@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memset.c                                           :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <huolivei@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 12:38:58 by huolivei          #+#    #+#             */
-/*   Updated: 2022/11/01 12:38:58 by huolivei         ###   ########.fr       */
+/*   Created: 2022/11/02 12:38:42 by huolivei          #+#    #+#             */
+/*   Updated: 2022/11/02 18:09:53 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    *ft_memset(void *str, int c, size_t n)
+void	*ft_memset(void *str, int c, size_t n)
 {
-    size_t i;
-    char    *str1;
+	size_t	i;
+	char	*str1;
 
-    i = 0;
-    str1 = str;
-    while (i < n)
-    {
-        str1[i] = c;
-        i++;
-    }
-    return ((void *)str1);
+	i = 0;
+	str1 = str;
+	while (i < n)
+	{
+		str1[i] = c;
+		i++;
+	}
+	return ((void *)str1);
 }
