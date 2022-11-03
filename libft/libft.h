@@ -37,10 +37,11 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t n);
 int		ft_isprint(int c);
 size_t	ft_strlcat(char *dest, const char *src, size_t destlen);
 int		ft_toupper(int c);
-char	ft_strchr(const char *str, int c);
+char	*ft_strchr(const char *str, int c);
 int		ft_tolower(int c);
 void	*ft_calloc(size_t n, size_t daty);
 char    *ft_substr(const char *str, unsigned int start, size_t len);
 char    *ft_strjoin(const char *s1, const char *s2);
+char    *ft_strtrim(const char *s1, const char *set);
 
 #endif
