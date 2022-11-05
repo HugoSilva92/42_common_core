@@ -43,5 +43,12 @@ void	*ft_calloc(size_t n, size_t daty);
 char    *ft_substr(const char *str, unsigned int start, size_t len);
 char    *ft_strjoin(const char *s1, const char *s2);
 char    *ft_strtrim(const char *s1, const char *set);
+static size_t	word_count(const char *str, char c);
+char	*ft_itoa(int n);
+void    ft_putendl_fd(char *s, int fd);
+char    *ft_strmapi(const char *s, char (*f)(unsigned int, char));
+void    ft_putstr_fd(char *s, int fd);
+void    ft_putnbr_fd(int n, int fd);
+void    ft_putchar_fd(char c, int fd);
 
 #endif
