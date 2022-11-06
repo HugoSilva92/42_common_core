@@ -62,7 +62,7 @@ char	**ft_split(const char *s, char c)
 	index = -1;
 	if (!s || !(split = malloc((word_count(s, c) + 1) * sizeof(char *))))
 		return (NULL);
-	while (i < ft_strlen(s))
+	while (i <= ft_strlen(s))
 	{
 		if (s[i] != c && index < 0)
 			index = i;

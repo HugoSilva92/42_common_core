@@ -16,14 +16,20 @@ char	*ft_strtrim(const char *s1, const char *set)
 {
 	size_t	i;
 	size_t	i1;
+	char* str;
 
-	i = 0;
-	if (!s1 || !set)
-		return (NULL);
-	while (s1[i] != '\0' && ft_strchr(set, s1[i]))
-		i++;
-	i1 = ft_strlen(s1);
-	while (i1 > 0 && ft_strchr(set, s1[i1]))
-		i1--;
-	return (ft_substr(s1, 0, i1 + 1));
+	str = 0;
+	if (s1 != 0 && set != 0)
+	{
+		i = 0;
+		i1 = ft_strlen(s1);
+		while (s1[i] && ft_strchr(set, s1[i]))
+			i++;
+		while (s1[i1 - 1] && ft_strchr(set, s1[i1 - 1]) && i1 > i)
+			i1--;
+		str = (char*)malloc(sizeof(char) * (i1 - i + 1));
+		if (str)
+			ft_strlcpy(str, &s1[i], i1 - i + 1);
+	}
+	return (str);
 }
