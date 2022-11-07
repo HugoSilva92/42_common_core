@@ -14,7 +14,7 @@
 
 static size_t	word_count(const char *str, char c)
 {
-	int	flag;
+	int		flag;
 	size_t	result;
 
 	result = 0;
@@ -52,15 +52,16 @@ static char	*fill_str(const	char *str, size_t start, size_t finish)
 
 char	**ft_split(const char *s, char c)
 {
-	size_t i;
-	size_t i1;
-	int	index;
+	size_t	i;
+	size_t	i1;
+	int		index;
 	char	**split;
 
 	i = 0;
 	i1 = 0;
 	index = -1;
-	if (!s || !(split = malloc((word_count(s, c) + 1) * sizeof(char *))))
+	split = malloc((word_count(s, c) + 1) * sizeof(char *));
+	if (!s || !split)
 		return (NULL);
 	while (i <= ft_strlen(s))
 	{

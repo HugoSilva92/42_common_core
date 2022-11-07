@@ -33,7 +33,7 @@ int	numlen(long n)
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int	i;
+	int		i;
 	long	nb;
 
 	nb = n;
