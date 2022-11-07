@@ -38,3 +38,20 @@ int	ft_atoi(const char *str)
 	}
 	return (result * sign);
 }
+
+/*int main()
+{
+	char str1[] = "15613";
+	char str2[] = "-15613";
+	char str3[] = "+15asd613";
+	char str4[] = "-1561dase3";
+
+	ft_putnbr_fd(ft_atoi(str1), 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(ft_atoi(str2), 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(ft_atoi(str3), 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(ft_atoi(str4), 1);
+	ft_putchar_fd('\n', 1);
+}*/

@@ -22,3 +22,8 @@ void	*ft_calloc(size_t n, size_t daty)
 	ft_bzero(total, n * daty);
 	return (total);
 }
+
+/*int main()
+{
+	ft_calloc(20, sizeof(char));
+}*/

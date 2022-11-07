@@ -25,3 +25,11 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 	}
 	return (0);
 }
+
+/*int main()
+{
+	char	str[] = "Ola e adeus";
+	char	str1[] = "Bom dia e boa noite";
+
+	ft_putnbr_fd(ft_memcmp(str, str1, 5), 1);
+}*/

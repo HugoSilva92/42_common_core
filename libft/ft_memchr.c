@@ -27,3 +27,12 @@ void	*ft_memchr(const void *str, int c, size_t n)
 	}
 	return (0);
 }
+
+/*int	main()
+{
+	char str[] = "Quando encontrares . segue!";
+	char c = 'e';
+
+	ft_putstr_fd(ft_memchr(str, c, ft_strlen(str)), 1);
+	ft_putchar_fd('\n', 1);
+}*/

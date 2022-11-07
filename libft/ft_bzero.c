@@ -25,3 +25,9 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
+
+/*int main()
+{
+	char str[20];
+	ft_bzero(str, 20);
+}*/

@@ -18,3 +18,15 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
+
+/*int	main()
+{
+	ft_putnbr_fd(ft_isalpha('a'), 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(ft_isalpha('U'), 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(ft_isalpha('5'), 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(ft_isalpha('\t'), 1);
+	ft_putchar_fd('\n', 1);
+}*/

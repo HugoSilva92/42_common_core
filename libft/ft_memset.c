@@ -26,3 +26,12 @@ void	*ft_memset(void *str, int c, size_t n)
 	}
 	return ((void *)str1);
 }
+
+/*int main()
+{
+	char	str[] = "Ola bom dia";
+	char	c = 'u';
+
+	ft_putstr_fd(ft_memset(str, c, 12), 1);
+	ft_putchar_fd('\n', 1);
+}*/

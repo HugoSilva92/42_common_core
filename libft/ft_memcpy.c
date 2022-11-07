@@ -30,3 +30,12 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+
+/*int main()
+{
+	char	str[] = "Vou ser copiado.";
+	char	dest[18];
+
+	ft_putstr_fd(ft_memcpy(dest, str, 18), 1);
+	ft_putchar_fd('\n', 1);
+}*/
