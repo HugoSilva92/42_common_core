@@ -2,3 +2,10 @@ libft/a.exe
 libft/.vscode/tasks.json
 .gitignore
 libft/.vscode/settings.json
+libft/*.out
+libft/.vscode
+libft/libft-unit-test
+libft/*.o
+libft/*.a
+libft/*.so
+libft/a.out
