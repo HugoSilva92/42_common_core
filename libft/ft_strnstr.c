@@ -18,6 +18,8 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	size_t	i1;
 
 	i = 0;
+	if (!s1)
+		return (0);
 	if (s2[0] == '\0')
 		return ((char *) s1);
 	while (s1[i] != '\0')
