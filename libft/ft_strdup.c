@@ -24,3 +24,14 @@ char	*ft_strdup(const char *str)
 	ft_memcpy(dest, str, i);
 	return (dest);
 }
+
+/*int	main()
+{
+	char	str[] = "Vou ser duplicado e nem te apercebes!";
+	char	str1[] = "Ve o valgrind!";
+	char	str2[] = "Ou o pyhtontutor!";
+
+	ft_putendl_fd(ft_strdup(str), 1);
+	ft_putendl_fd(ft_strdup(str1), 1);
+	ft_putendl_fd(ft_strdup(str2), 1);
+}*/

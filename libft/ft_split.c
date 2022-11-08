@@ -77,3 +77,18 @@ char	**ft_split(const char *s, char c)
 	split[i1] = 0;
 	return (split);
 }
+
+/*int	main()
+{
+	char	str[] = "Eu vou ser splitado!";
+	char	c = ' ';
+	char	**spt = ft_split(str, c);
+	int	i = 0;
+
+	while (spt[i] != 0)
+	{
+		ft_putstr_fd(spt[i], 1);
+		i++;
+	}
+	ft_putchar_fd('\n', 1);
+}*/

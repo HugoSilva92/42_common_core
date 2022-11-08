@@ -32,3 +32,10 @@ char	*ft_substr(const char *str, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
+
+/*int	main()
+{
+	char	str[] = "Mais um pouco e era Sub-Zero!";
+
+	ft_putendl_fd(ft_substr(str, 20, 30), 1);
+}*/

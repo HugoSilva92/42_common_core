@@ -25,3 +25,11 @@ char	*ft_strrchr(const char *str, int c)
 		return (0);
 	return ((char *)str + i);
 }
+
+/*int	main()
+{
+	char	str[] = "Onde esta o W? Ca esta ele";
+	char	c = 'W';
+
+	ft_putendl_fd(ft_strchr(str, c), 1);
+}*/

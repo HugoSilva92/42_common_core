@@ -31,3 +31,11 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	total[i1] = '\0';
 	return (total);
 }
+
+/*int	main()
+{
+	char	str[] = "Junta te a mim, ";
+	char	str1[] = "nos ja vivemos 100 mil anos!";
+
+	ft_putendl_fd(ft_strjoin(str, str1), 1);
+}*/

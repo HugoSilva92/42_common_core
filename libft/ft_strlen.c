@@ -21,3 +21,17 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
+
+/*int main()
+{
+	char	str[] = "Queres saber o meu tamanho?";
+	char	str1[] = "O meu tambem?";
+	char	str2[] = "Ja nao achas que estas curioso/a demais?";
+
+	ft_putnbr_fd(ft_strlen(str), 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(ft_strlen(str1), 1);
+	ft_putchar_fd('\n', 1);
+	ft_putnbr_fd(ft_strlen(str2), 1);
+	ft_putchar_fd('\n', 1);
+}*/

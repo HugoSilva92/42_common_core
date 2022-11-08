@@ -33,3 +33,11 @@ char	*ft_strtrim(const char *s1, const char *set)
 	}
 	return (str);
 }
+
+/*int	main()
+{
+	char	str[] = "Where's Wally?";
+	char	str1[] = "Wally";
+
+	ft_putendl_fd(ft_strtrim(str, str1), 1);
+}*/

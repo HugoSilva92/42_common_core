@@ -34,3 +34,12 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t len)
 	}
 	return (srclen);
 }
+
+/*int	main()
+{
+	char	dest[] = "nem me vais ver!";
+	char	src[] = "nem a mim, mas vais saber o nosso tamanho!";
+
+	ft_putnbr_fd(ft_strlcpy(dest, src, 20), 1);
+	ft_putchar_fd('\n', 1);
+}*/

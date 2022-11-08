@@ -19,12 +19,16 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	if (n == 0)
 		return (0);
-	while (s1[i] == s2[i] && s1[i] != '\0')
-	{
-		if (i < (n - 1))
+	while (s1[i] == s2[i] && s1[i] != '\0' && i < n)
 			i++;
-		else
-			return (0);
-	}
 	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
+
+/*int	main()
+{
+	char	str[] = "Sera que sou grande?";
+	char	str1[] = "Ou sera que eu ainda sou maior?";
+
+	ft_putnbr_fd(ft_strncmp(str, str1, 5), 1);
+	ft_putchar_fd('\n', 1);
+}*/

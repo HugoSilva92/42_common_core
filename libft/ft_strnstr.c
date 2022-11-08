@@ -33,3 +33,11 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 	}
 	return (0);
 }
+
+/*int	main()
+{
+	char	str[] = "Indo eu, indo eu";
+	char	str1[] = "indo";
+
+	ft_putendl_fd(ft_strnstr(str, str1, ft_strlen(str)), 1);
+}*/

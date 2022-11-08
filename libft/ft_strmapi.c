@@ -31,3 +31,14 @@ char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 	dest[i] = '\0';
 	return (dest);
 }
+
+/*char	ft_test(unsigned int i, char s)
+{
+	s += i;
+}
+int	main()
+{
+	char	str[] = "Ola";
+
+	ft_putendl_fd(ft_strmapi(str, ft_test), 1);
+}*/

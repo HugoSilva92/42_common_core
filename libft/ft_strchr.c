@@ -23,3 +23,11 @@ char	*ft_strchr(const char *str, int c)
 		return ((char *)str + i);
 	return (NULL);
 }
+
+/*int	main()
+{
+	char	str[] = "Eu vou encontrar um ponto . Ca esta ele!";
+	char	c = '.';
+
+	ft_putendl_fd(ft_strchr(str, c), 1);
+}*/

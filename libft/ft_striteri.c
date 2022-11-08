@@ -25,3 +25,17 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 		i++;
 	}
 }
+
+/*void	ft_test(unsigned int i, char *str)
+	{
+		*str += i;
+	}
+
+
+int	main()
+{
+	char	str[] = "aBcDeF";
+
+	ft_striteri(str, ft_test);
+	ft_putendl_fd(str, 1);
+}*/
