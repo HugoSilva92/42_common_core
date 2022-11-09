@@ -33,48 +33,40 @@ static size_t	word_count(const char *str, char c)
 	return (result);
 }
 
-static char	*fill_str(const	char *str, size_t start, size_t finish)
+static void	ft_allocate(char **tab, char const *s, char sep)
 {
-	char	*dest;
-	size_t	i;
+	char		**tab1;
+	char const	*tmp;
 
-	i = 0;
-	dest = malloc ((finish - start + 1) * sizeof(char));
-	while (start < finish)
+	tmp = s;
+	tab1 = tab;
+	while (*tmp)
 	{
-		dest[i] = str[start];
-		i++;
-		start++;
+		while (*s == sep)
+			++s;
+		tmp = s;
+		while (*tmp && *tmp != sep)
+			++tmp;
+		if (*tmp == sep || tmp > s)
+		{
+			*tab1 = ft_substr(s, 0, tmp - s);
+			s = tmp;
+			++tab1;
+		}
 	}
-	dest[i] = '\0';
-	return (dest);
+	*tab1 = NULL;
 }
 
 char	**ft_split(const char *s, char c)
 {
-	size_t	i;
-	size_t	i1;
-	int		index;
 	char	**split;
 
-	i = 0;
-	i1 = 0;
-	index = -1;
-	split = malloc((word_count(s, c) + 1) * sizeof(char *));
-	if (!s || !split)
+	if (!s)
 		return (NULL);
-	while (i <= ft_strlen(s))
-	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
-		{
-			split[i1++] = fill_str(s, index, i);
-			index = -1;
-		}
-		i++;
-	}
-	split[i1] = 0;
+	split = malloc((word_count(s, c) + 1) * sizeof(char *));
+	if (!split)
+		return (NULL);
+	ft_allocate(split, s, c);
 	return (split);
 }
 

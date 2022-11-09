@@ -18,8 +18,14 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	int		i1;
 	char	*total;
 
+	if (!s1 && !s2)
+		return (ft_strdup(""));
+	if (s1 && !s2)
+		return (ft_strdup(s1));
+	if (!s1 && s2)
+		return (ft_strdup(s2));
 	total = malloc((ft_strlen(s1) + ft_strlen(s2)) + 1 * sizeof(char));
-	if (!total || !s1 || !s2)
+	if (!total)
 		return (NULL);
 	i = 0;
 	i1 = 0;
