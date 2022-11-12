@@ -72,7 +72,7 @@ char	**ft_split(const char *s, char c)
 
 /*int	main()
 {
-	char	str[] = "Eu vou ser splitado!";
+	char	str[] = "Eu vou ser       roubado de espacos!";
 	char	c = ' ';
 	char	**spt = ft_split(str, c);
 	int	i = 0;
