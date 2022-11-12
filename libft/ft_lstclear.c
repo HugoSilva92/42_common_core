@@ -23,9 +23,33 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	while (start)
 	{
 		tmp = start -> next;
-		(*del)(start -> content);
+		(del)(start -> content);
 		free(start);
 		start = tmp;
 	}
 	*lst = NULL;
 }
+
+/*void del(void * content)
+{
+		free(content);
+}
+
+int	main()
+{
+	char	*c = ft_strdup("ola");
+	char	*s = ft_strdup("Xau");
+	char	*j = ft_strdup("Obrigado por terem vindo");
+	t_list *elem;
+
+	elem = ft_lstnew(c);
+	elem ->next = ft_lstnew(s);
+	elem ->next ->next = ft_lstnew (j);
+
+    ft_lstclear(&elem ->next, &del);
+	while (elem != NULL)
+    {
+    	ft_putendl_fd(elem -> content, 1);
+    	elem = elem -> next;
+    }
+}*/

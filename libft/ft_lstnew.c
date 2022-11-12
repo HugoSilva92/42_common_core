@@ -25,3 +25,16 @@ t_list	*ft_lstnew(void *content)
 	new -> next = NULL;
 	return (new);
 }
+
+/*int	main()
+{
+	t_list	*elem;
+	elem = ft_lstnew("ola");
+	elem ->next = ft_lstnew("Xau");
+	elem ->next ->next = ft_lstnew ("Obrigado por terem vindo");
+	ft_putendl_fd(elem -> content, 1);
+	elem = elem ->next;
+	ft_putendl_fd(elem ->content, 1);
+	elem = elem ->next;
+	ft_putendl_fd(elem ->content, 1);
+}*/

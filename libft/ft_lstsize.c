@@ -24,3 +24,22 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
+
+/*int	main()
+{
+	char	*c = ft_strdup("ola");
+	char	*s = ft_strdup("Xau");
+	char	*j = ft_strdup("Obrigado por terem vindo");
+	t_list *elem;
+	elem = ft_lstnew(c);
+	elem ->next = ft_lstnew(s);
+	elem ->next ->next = ft_lstnew (j);
+
+	ft_putnbr_fd(ft_lstsize(elem), 1);
+	ft_putchar_fd('\n', 1);
+	while (elem != NULL)
+    {
+    	ft_putendl_fd(elem -> content, 1);
+    	elem = elem -> next;
+    }
+}*/

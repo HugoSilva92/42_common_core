@@ -19,3 +19,18 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	(*del)(lst -> content);
 	free (lst);
 }
+
+/*void del(void *content)
+{
+	if (content != NULL)
+		free(content);
+	ft_putendl_fd("Fui liberto", 1);
+}
+
+int	main()
+{
+	char	*c = ft_strdup("ola");
+	t_list *elem;
+	elem = ft_lstnew(c);
+	ft_lstdelone(elem , del);
+}*/
