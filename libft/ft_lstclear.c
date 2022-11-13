@@ -6,7 +6,7 @@
 /*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 16:49:52 by huolivei          #+#    #+#             */
-/*   Updated: 2022/11/07 17:34:15 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/11/13 14:57:25 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	t_list	*tmp;
 	t_list	*start;
 
-	if(lst == NULL || del == NULL)
+	if (lst == NULL || del == NULL)
 		return ;
 	start = *lst;
 	while (start)
