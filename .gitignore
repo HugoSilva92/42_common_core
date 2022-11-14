@@ -9,3 +9,7 @@ libft/*.o
 libft/*.a
 libft/*.so
 libft/a.out
+.vscode/settings.json
+get_next_line/a.out
+get_next_line/main.c
+.gitignore

@@ -26,14 +26,11 @@ char	*ft_hold(char *str)
 		free(str);
 		return (NULL);
 	}
-	hold = malloc((ft_strlen(str) - i + 1) * sizeof(char));
-	if (!hold)
-		return (NULL);
+	hold = ft_calloc((ft_strlen(str) - i + 1), sizeof(char));
 	i++;
 	i1 = 0;
 	while (str[i])
 		hold[i1++] = str[i++];
-	hold[i] = '\0';
 	free(str);
 	return(hold);
 }
@@ -48,21 +45,15 @@ char	*ft_get_line(char *str)
 		return (NULL);
 	while (str[i] && str[i] != '\n')
 		i++;
-	line = malloc((i + 2) * sizeof(char));
-	if (!line)
-		return (NULL);
+	line = ft_calloc((i + 2), sizeof(char));
 	i = 0;
 	while (str[i] && str[i] != '\n')
 	{
 		line[i] = str[i];
 		i++;
 	}
-	if (str[i] == '\n')
-	{
-		line[i] = str[i];
-		i++;
-	}
-	line[i] = '\0';
+	if (str[i] != '\0' && str[i] == '\n')
+		line[i++] = '\n';
 	return (line);
 }
 
@@ -71,11 +62,9 @@ char	*ft_buffer_reader(int fd, char *str)
 	char	*buffer;
 	int	i;
 
-	buffer = malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!buffer)
-		return (NULL);
-	i = 1; 							//verificar condicao para 0
-	while (!ft_strchr(str, '\n') && i)		//verficar i
+	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	i = 1;
+	while (!ft_strchr(buffer, '\n') && i > 0)
 	{
 		i = read(fd, buffer, BUFFER_SIZE);
 		if (i == -1)
