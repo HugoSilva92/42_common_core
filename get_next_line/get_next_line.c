@@ -46,15 +46,20 @@ char	*ft_get_line(char *str)
 	while (str[i] && str[i] != '\n')
 		i++;
 	line = ft_calloc((i + 2), sizeof(char));
-	i = 0;
-	while (str[i] && str[i] != '\n')
-	{
+	i = -1;
+	while (str[++i] && str[i] != '\n')
 		line[i] = str[i];
-		i++;
-	}
-	if (str[i] != '\0' && str[i] == '\n')
-		line[i++] = '\n';
+	line[i++] = '\n';
 	return (line);
+}
+
+char	*ft_free(char *str, char *buf)
+{
+	char	*tmp;
+
+	tmp = ft_strjoin(str, buf);
+	free(str);
+	return (tmp);
 }
 
 char	*ft_buffer_reader(int fd, char *str)
@@ -72,8 +77,8 @@ char	*ft_buffer_reader(int fd, char *str)
 			free(buffer);
 			return (NULL);
 		}
-		buffer[i] = '\0';
-		str = ft_strjoin(str, buffer);
+		buffer[i] = 0;
+		str = ft_free(str, buffer);
 	}
 	free(buffer);
 	return(str);

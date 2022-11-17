@@ -13,3 +13,5 @@ libft/a.out
 get_next_line/a.out
 get_next_line/main.c
 .gitignore
+get_next_line/test.txt
+get_next_line/test.c
