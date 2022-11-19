@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/12 18:55:59 by huolivei          #+#    #+#             */
-/*   Updated: 2022/11/12 18:55:59 by huolivei         ###   ########.fr       */
+/*   Created: 2022/11/19 01:16:04 by huolivei          #+#    #+#             */
+/*   Updated: 2022/11/19 01:16:16 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_hold(char *str)
 {
@@ -88,14 +88,14 @@ char	*ft_buffer_reader(int fd, char *str)
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*left_str;
+	static char	*left_str[1024];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);
-	left_str = ft_buffer_reader(fd, left_str);
-	if (!left_str)
+	left_str[fd] = ft_buffer_reader(fd, left_str[fd]);
+	if (!left_str[fd])
 		return (NULL);
-	line = ft_get_line(left_str);
-	left_str = ft_hold(left_str);
+	line = ft_get_line(left_str[fd]);
+	left_str[fd] = ft_hold(left_str[fd]);
 	return (line);
 }
