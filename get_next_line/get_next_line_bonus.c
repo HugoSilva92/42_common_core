@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
+/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 01:16:04 by huolivei          #+#    #+#             */
-/*   Updated: 2022/11/19 01:16:16 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/11/21 14:52:07 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-char	*ft_hold(char *str)
+static char	*ft_hold(char *str)
 {
-	int	i;
-	int	i1;
+	int		i;
+	int		i1;
 	char	*hold;
 
 	i = 0;
@@ -32,12 +32,12 @@ char	*ft_hold(char *str)
 	while (str[i])
 		hold[i1++] = str[i++];
 	free(str);
-	return(hold);
+	return (hold);
 }
 
-char	*ft_get_line(char *str)
+static char	*ft_get_line(char *str)
 {
-	int	i;
+	int		i;
 	char	*line;
 
 	i = 0;
@@ -49,12 +49,11 @@ char	*ft_get_line(char *str)
 	i = -1;
 	while (str[++i] && str[i] != '\n')
 		line[i] = str[i];
-	if (str[i] && str[i] == '\n')
-		line[i++] = '\n';
+	line[i] = str[i];
 	return (line);
 }
 
-char	*ft_free(char *str, char *buf)
+static char	*ft_free(char *str, char *buf)
 {
 	char	*tmp;
 
@@ -63,10 +62,10 @@ char	*ft_free(char *str, char *buf)
 	return (tmp);
 }
 
-char	*ft_buffer_reader(int fd, char *str)
+static char	*ft_buffer_reader(int fd, char *str)
 {
 	char	*buffer;
-	int	i;
+	int		i;
 
 	buffer = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	i = 1;
@@ -82,13 +81,13 @@ char	*ft_buffer_reader(int fd, char *str)
 		str = ft_free(str, buffer);
 	}
 	free(buffer);
-	return(str);
+	return (str);
 }
 
 char	*get_next_line(int fd)
 {
 	char		*line;
-	static char	*left_str[1024];
+	static char	*left_str[65536];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (0);

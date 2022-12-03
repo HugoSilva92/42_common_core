@@ -6,16 +6,16 @@
 /*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 18:55:59 by huolivei          #+#    #+#             */
-/*   Updated: 2022/11/12 18:55:59 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/11/22 09:45:30 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_hold(char *str)
+static char	*ft_hold(char *str)
 {
-	int	i;
-	int	i1;
+	int		i;
+	int		i1;
 	char	*hold;
 
 	i = 0;
@@ -32,12 +32,12 @@ char	*ft_hold(char *str)
 	while (str[i])
 		hold[i1++] = str[i++];
 	free(str);
-	return(hold);
+	return (hold);
 }
 
-char	*ft_get_line(char *str)
+static char	*ft_get_line(char *str)
 {
-	int	i;
+	int		i;
 	char	*line;
 
 	i = 0;
@@ -49,12 +49,11 @@ char	*ft_get_line(char *str)
 	i = -1;
 	while (str[++i] && str[i] != '\n')
 		line[i] = str[i];
-	if (str[i] && str[i] == '\n')
-		line[i++] = '\n';
+	line[i] = str[i];
 	return (line);
 }
 
-char	*ft_free(char *str, char *buf)
+static char	*ft_free(char *str, char *buf)
 {
 	char	*tmp;
 
@@ -63,10 +62,10 @@ char	*ft_free(char *str, char *buf)
 	return (tmp);
 }
 
-char	*ft_buffer_reader(int fd, char *str)
+static char	*ft_buffer_reader(int fd, char *str)
 {
 	char	*buffer;
-	int	i;
+	int		i;
 
 	buffer = ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	i = 1;
@@ -82,7 +81,7 @@ char	*ft_buffer_reader(int fd, char *str)
 		str = ft_free(str, buffer);
 	}
 	free(buffer);
-	return(str);
+	return (str);
 }
 
 char	*get_next_line(int fd)
@@ -98,4 +97,26 @@ char	*get_next_line(int fd)
 	line = ft_get_line(left_str);
 	left_str = ft_hold(left_str);
 	return (line);
+}
+
+int main()
+{
+	char *line;
+	int fd = open("multiple_line_no_nl", O_RDONLY);
+
+	line = get_next_line(fd);
+	printf("%s", line);
+	free(line);
+	line = get_next_line(fd);
+	printf("%s", line);
+	free(line);
+	line = get_next_line(fd);
+	printf("%s", line);
+	free(line);
+	line = get_next_line(fd);
+	printf("%s", line);
+	free(line);
+	line = get_next_line(fd);
+	printf("%s", line);
+	free(line);
 }

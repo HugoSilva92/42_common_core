@@ -6,13 +6,13 @@
 /*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 19:39:54 by huolivei          #+#    #+#             */
-/*   Updated: 2022/11/12 19:39:54 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/03 12:12:53 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strchr(char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
 	unsigned int	i;
 
@@ -34,7 +34,7 @@ char	*ft_strchr(char *str, int c)
 	return (NULL);
 }
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	int		i;
 	int		i1;
@@ -46,7 +46,7 @@ char	*ft_strjoin(char *s1, char *s2)
 		return (ft_strdup(s1));
 	if (!s1 && s2)
 		return (ft_strdup(s2));
-	total = malloc(((ft_strlen(s1) + ft_strlen(s2)) + 1) * sizeof(char));
+	total = malloc((ft_strlen(s1) + ft_strlen(s2)) + 1 * sizeof(char));
 	if (!total)
 		return (NULL);
 	i = 0;
@@ -60,38 +60,27 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (total);
 }
 
-char	*ft_strdup(char *str)
-{
-	char	*dest;
-	size_t	i;
-	size_t	i1;
-
-	i = ft_strlen(str) + 1;
-	i1 = 0;
-	dest = malloc(i * sizeof(char));
-	if (!dest)
-		return (NULL);
-	while (i1 < i)
-	{
-		dest[i1] = str[i1];
-		i1++;
-	}
-	return (dest);
-}
-
 void	*ft_calloc(size_t n, size_t daty)
 {
 	char	*total;
-	size_t	i;
 
 	total = malloc(n * daty);
-	i = 0;
 	if (!total)
 		return (NULL);
-	while (i < (n * daty))
+	ft_bzero(total, n * daty);
+	return (total);
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	size_t	i;
+	char	*tt;
+
+	i = 0;
+	tt = s;
+	while (i < n)
 	{
-		total[i] = '\0';
+		tt[i] = '\0';
 		i++;
 	}
-	return (total);
 }
