@@ -6,7 +6,7 @@
 /*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/02 12:40:15 by huolivei          #+#    #+#             */
-/*   Updated: 2022/11/02 16:50:31 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/11/29 15:02:08 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,21 @@ char	*ft_strrchr(const char *str, int c)
 	return ((char *)str + i);
 }
 
-/*int	main()
-{
-	char	str[] = "Onde esta o W? Ca esta ele";
-	char	c = 'W';
+#include <string.h>
+#include <stdio.h>
 
-	ft_putendl_fd(ft_strchr(str, c), 1);
-}*/
+int main()
+{
+    // Storing it in string array
+    char string[] = "Geeks for Geeks";
+
+    // The character we've to search for
+    char character = 'r';
+
+    // Storing in a pointer ptr
+    char* ptr = strrchr(string, character);
+    printf("%c\n", *ptr);
+    ptr = ft_strrchr(string, character);
+    printf("%c\n", *ptr);
+    return 0;
+}
