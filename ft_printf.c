@@ -29,7 +29,10 @@ int	get_format(va_list args, const char str)
 	else if (str == 'u')
 		rst += ft_prtunnb(va_arg(args, unsigned int));
 	else if (str == 'x' || str == 'X')
-		rst +=
+		rst += ft_printhex(va_arg(args, unsigned int), str);
+	else if (str == '%')
+		rst += ft_putchar('%');
+	return (rst);
 }
 
 int	ft_printf(const char *str, ...)
@@ -46,6 +49,12 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			rst += get_format(args, str[i + 1]);
+			i++;
 		}
+		else
+			rst += ft_putchar(str[i]);
+		i++;
 	}
+	va_end(args);
+	return (rst);
 }

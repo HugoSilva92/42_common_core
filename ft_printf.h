@@ -25,5 +25,7 @@ int ft_prtnb(int nb);
 int	ft_nbsup10(unsigned int nb);
 char	*ft_uitoa(unsigned int n);
 int	ft_prtunnb(unsigned int nb);
+void	ft_puthex(unsigned int nb, const char *str);
+int	ft_printhex(unsigned int nb, const char *str);
 
 #endif
