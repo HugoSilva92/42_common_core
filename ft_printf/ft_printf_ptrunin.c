@@ -1,17 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_ptr.c                                    :+:      :+:    :+:   */
+/*   ft_printf_ptrunin.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:40:49 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/03 16:35:05 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/04 12:56:28 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 void	ft_prtadr(unsigned long long ptr)
 {
@@ -77,7 +76,7 @@ int	ft_prtunnb(unsigned int nb)
 	else
 	{
 		str = ft_uitoa(nb);
-		rst = ft_prtstr(nb);
+		rst = ft_prtstr(str);
 		free(str);
 	}
 	return (rst);

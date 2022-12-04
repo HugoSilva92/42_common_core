@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_formats.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:08:32 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/03 16:37:07 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/04 12:59:39 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 int	ft_prtstr(char *str)
 {
@@ -31,7 +30,7 @@ int	ft_nbsup16(unsigned long long nb)
 	int	rst;
 
 	rst = 0;
-	while (nb >= 0)
+	while (nb != 0)
 	{
 		nb /= 16;
 		rst++;
@@ -44,7 +43,7 @@ int	ft_nbsup10(unsigned int nb)
 	int	rst;
 
 	rst = 0;
-	while (nb >= 0)
+	while (nb != 0)
 	{
 		nb /= 10;
 		rst++;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 13:54:12 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/03 16:35:20 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/04 12:55:14 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 
+int	ft_printf(const char *str, ...);
+int	get_format(va_list args, const char str);
 int	ft_prtstr(char *str);
 int	ft_putchar(int c);
 int	ft_nbsup16(unsigned long long nb);
@@ -25,7 +29,9 @@ int ft_prtnb(int nb);
 int	ft_nbsup10(unsigned int nb);
 char	*ft_uitoa(unsigned int n);
 int	ft_prtunnb(unsigned int nb);
-void	ft_puthex(unsigned int nb, const char *str);
-int	ft_printhex(unsigned int nb, const char *str);
+void	ft_puthex(unsigned int nb, const char str);
+int	ft_printhex(unsigned int nb, const char str);
+char	*ft_itoa(int n);
+int	numlen(long n);
 
 #endif

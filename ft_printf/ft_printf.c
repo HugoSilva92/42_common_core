@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 13:50:21 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/03 16:41:52 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/04 13:08:31 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft/libft.h"
 
 int	get_format(va_list args, const char str)
 {
@@ -21,7 +20,7 @@ int	get_format(va_list args, const char str)
 	if (str == 'c')
 		rst += ft_putchar(va_arg(args, int));
 	else if (str == 's')
-		rst += ft_printstr(va_arg(args, char *));
+		rst += ft_prtstr(va_arg(args, char *));
 	else if (str == 'p')
 		rst += ft_putadr(va_arg(args, unsigned long long));
 	else if (str == 'd' || str == 'i')
@@ -57,4 +56,25 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (rst);
+}
+
+int	main()
+{
+	char str[] = "Ola tudo bem";
+	int i = 101;
+	char c = 'c';
+	int x = -101;
+
+	ft_printf("Ola\n");
+	printf("Ola\n");
+	ft_printf("%c\n", c);
+	printf("%c\n", c);
+	ft_printf("%s\n", str);
+	printf("%s\n", str);
+	ft_printf("%d\n", i);
+	printf("%d\n", i);
+	ft_printf("%i\n", i);
+	printf("%i\n", i);
+	//ft_printf("%u\n", x);
+	printf("%u\n", x);
 }
