@@ -6,7 +6,7 @@
 /*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:40:49 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/04 12:56:28 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/04 15:33:39 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_prtadr(unsigned long long ptr)
 {
-	if (ptr > 16)
+	if (ptr >= 16)
 	{
 		ft_prtadr(ptr / 16);
 		ft_prtadr(ptr % 16);
 	}
 	else
 	{
-		if (ptr < 9)
+		if (ptr <= 9)
 			ft_putchar(ptr + '0');
 		else
 			ft_putchar(ptr - 10 + 'a');
@@ -56,7 +56,7 @@ char	*ft_uitoa(unsigned int n)
 	if (!str)
 		return (0);
 	str[i] = '\0';
-	while (nb >= 0)
+	while (nb != 0)
 	{
 		str[i - 1] = nb % 10 + '0';
 		nb /= 10;
@@ -67,7 +67,7 @@ char	*ft_uitoa(unsigned int n)
 
 int	ft_prtunnb(unsigned int nb)
 {
-	int	rst;
+	int		rst;
 	char	*str;
 
 	rst = 0;

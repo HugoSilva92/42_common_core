@@ -6,7 +6,7 @@
 /*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 15:08:32 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/04 12:59:39 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/04 15:34:34 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ int	ft_prtstr(char *str)
 	int	i;
 
 	i = 0;
+	if (str == NULL)
+	{
+		write(1, "(null)", 6);
+		return (6);
+	}
 	while (str[i])
 	{
 		write(1, &str[i], 1);
@@ -53,14 +58,14 @@ int	ft_nbsup10(unsigned int nb)
 
 int	ft_putchar(int c)
 {
-	write(1, &c, 1);
-	return(1);
+	write (1, &c, 1);
+	return (1);
 }
 
-int ft_prtnb(int nb)
+int	ft_prtnb(int nb)
 {
-	int rst;
-	char *str;
+	int		rst;
+	char	*str;
 
 	str = ft_itoa(nb);
 	rst = ft_prtstr(str);

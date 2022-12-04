@@ -6,7 +6,7 @@
 /*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 13:50:21 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/04 13:08:31 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/04 15:34:50 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	get_format(va_list args, const char str)
 
 int	ft_printf(const char *str, ...)
 {
-	int	i;
-	int	rst;
+	int		i;
+	int		rst;
 	va_list	args;
 
 	i = 0;
@@ -56,25 +56,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (rst);
-}
-
-int	main()
-{
-	char str[] = "Ola tudo bem";
-	int i = 101;
-	char c = 'c';
-	int x = -101;
-
-	ft_printf("Ola\n");
-	printf("Ola\n");
-	ft_printf("%c\n", c);
-	printf("%c\n", c);
-	ft_printf("%s\n", str);
-	printf("%s\n", str);
-	ft_printf("%d\n", i);
-	printf("%d\n", i);
-	ft_printf("%i\n", i);
-	printf("%i\n", i);
-	//ft_printf("%u\n", x);
-	printf("%u\n", x);
 }

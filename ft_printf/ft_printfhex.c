@@ -6,7 +6,7 @@
 /*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/03 21:15:39 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/04 12:57:28 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/04 15:16:29 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_puthex(unsigned int nb, const char str)
 	}
 	else
 	{
-		if (nb < 9)
+		if (nb <= 9)
 			ft_putchar(nb + '0');
 		else
 		{
