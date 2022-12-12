@@ -1,0 +1,79 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/12 12:37:38 by huolivei          #+#    #+#             */
+/*   Updated: 2022/12/12 16:21:26 by huolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+void	push_to_b(t_list **stack_a, t_list **stack_b)
+{
+	int	size;
+	int	sent;
+	int	i;
+
+	size = get_size(*stack_a);
+	sent = 0;
+	i = 0;
+	while (size > 6 && i < size && sent < (size / 2))
+	{
+		if (stack_a->index <= (size / 2))
+		{
+			pb(stack_a, stack_b);
+			sent++;
+		}
+		else
+			ra(stack_a);
+		i++;
+	}
+	while (size - sent > 3)
+	{
+		pb(stack_a, stack_b);
+		sent++;
+	}
+}
+
+int	get_max_i(t_list *stack)
+{
+	int	i;
+
+	i = stack->index;
+	while (stack)
+	{
+		if (stack->index > i)
+			i = stack->index;
+		stack = stack->next;
+	}
+	return (i);
+}
+
+void	small_sort(t_list **stack)
+{
+	int	max_i;
+
+	max_i = get_max_i(*stack);
+	if ((*stack)->index == max_i)
+		ra(stack);
+	else if ((*stack)->next->index == max_i)
+		rra(stack);
+	if ((*stack)->index > (*stack)->next->index)
+		sa(stack);
+}
+
+void	sort(t_list **stack_a, t_list **stack_b)
+{
+	push_to_b(stack_a, stack_b);
+	small_sort(stack_a);
+	while (*stack_b)
+	{
+		get_tar_pos(stack_a, stack_b);
+		get_cost(stack_a, stack_b);
+		do_less_cost(stack_a, stack_b);
+	}
+}

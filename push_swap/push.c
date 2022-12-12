@@ -1,0 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/12/12 14:06:58 by huolivei          #+#    #+#             */
+/*   Updated: 2022/12/12 14:11:44 by huolivei         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+void	push(t_list **stack_a, t_list **stack_b)
+{
+	t_list	tmp;
+
+	tmp = (*stack_a)->next;
+	(*stack_a)->next = *stack_b;
+	*stack_b = *stack_a;
+	*stack_a = tmp;
+}
+
+void	pb(t_list **stack_a, t_list **stack_b)
+{
+	push(stack_a, stack_b);
+	write(1, "pb\n", 3);
+}
