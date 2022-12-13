@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   initialize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:22:15 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/12 11:52:32 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/13 22:41:44 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_list	initialize(long int nb)
+t_list	*initialize(long int nb)
 {
-	t_list	stack;
+	t_list	*stack;
 
 	stack = malloc(sizeof(stack));
 	if (!stack)
@@ -29,7 +29,7 @@ t_list	initialize(long int nb)
 	return (stack);
 }
 
-t_list	get_bottom_stack(t_list *stack)
+t_list	*get_bottom_stack(t_list *stack)
 {
 	while (stack -> next)
 		stack = stack -> next;
@@ -38,7 +38,7 @@ t_list	get_bottom_stack(t_list *stack)
 
 void	add_bottom(t_list **stack, t_list *new)
 {
-	t_list	bottom;
+	t_list	*bottom;
 
 	if (*stack == NULL)
 	{
@@ -49,14 +49,14 @@ void	add_bottom(t_list **stack, t_list *new)
 	bottom -> next = new;
 }
 
-t_list	get_values(int ac, char **av)
+t_list	*get_values(int ac, char **av)
 {
-	t_list		stack;
+	t_list		*stack;
 	long int	nb;
 	int			i;
 
 	nb = 0;
-	i = 1
+	i = 1;
 	stack = NULL;
 	while (i < ac)
 	{
@@ -66,7 +66,7 @@ t_list	get_values(int ac, char **av)
 		if (i == 1)
 			stack = initialize((int)nb);
 		else
-			stack = add_bottom(&stack, initialize((int)nb));
+			add_bottom(&stack, initialize((int)nb));
 		i++;
 	}
 	return (stack);

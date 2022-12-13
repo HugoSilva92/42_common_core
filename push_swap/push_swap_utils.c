@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:46:06 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/12 12:35:28 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/13 23:02:03 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void free_stack(t_list **stack)
 {
-	t_list	tmp;
+	t_list	*tmp;
 
 	if (!(*stack))
 		return ;
@@ -39,8 +39,8 @@ void	error(t_list **stack_a, t_list **stack_b)
 
 void	get_index(t_list *stack, int size)
 {
-	t_list	tmp;
-	t_list	highest;
+	t_list	*tmp;
+	t_list	*highest;
 	int		min;
 
 	while (--size > 0)

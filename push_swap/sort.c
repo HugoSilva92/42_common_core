@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:37:38 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/12 16:21:26 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/13 23:04:34 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	push_to_b(t_list **stack_a, t_list **stack_b)
 	i = 0;
 	while (size > 6 && i < size && sent < (size / 2))
 	{
-		if (stack_a->index <= (size / 2))
+		if ((*stack_a)->index <= (size / 2))
 		{
 			pb(stack_a, stack_b);
 			sent++;

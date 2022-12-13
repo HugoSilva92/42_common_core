@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cost.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:03:12 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/12 16:25:34 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/13 22:22:05 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,13 @@ void	do_less_cost(t_list **stack_a, t_list **stack_b)
 	less_mov = INT_MAX;
 	while (tmp)
 	{
-
+		if ((abs_nb(tmp->cost_a) + abs_nb(tmp->cost_b)) < less_mov)
+		{
+			less_mov = abs_nb(tmp->cost_a) + abs_nb(tmp->cost_b);
+			cost_a = tmp->cost_a;
+			cost_b = tmp->cost_b;
+		}
+		tmp = tmp->next;
 	}
+	move_stack(stack_a, stack_b, cost_a, cost_b);
 }

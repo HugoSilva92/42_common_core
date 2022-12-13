@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:46:47 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/12 10:43:49 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/13 22:59:38 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	amount_zeros(char **av)
 {
-	int	i
+	int	i;
 
 	i = 0;
 	while (av[i])

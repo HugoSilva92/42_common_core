@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   position.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:31:52 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/12 16:00:11 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/13 23:01:44 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ void	get_pos(t_list **stack)
 
 int	get_best_targ_pos(t_list **stack, int b_index, int max_index, int tar_pos)
 {
-	t_list	*tmp
+	t_list	*tmp;
 
 	tmp = *stack;
 	while (tmp)
 	{
 		if (tmp->index > b_index && tmp->index < max_index)
 		{
-			max_index = tmp->tmp;
-			tar_pos = tmp->targ_pos;
+			max_index = tmp->index;
+			tar_pos = tmp->pos;
 		}
 		tmp = tmp->next;
 	}
@@ -58,14 +58,14 @@ int	get_best_targ_pos(t_list **stack, int b_index, int max_index, int tar_pos)
 
 void	get_tar_pos(t_list **stack_a, t_list **stack_b)
 {
-	t_list	tmp;
+	t_list	*tmp;
 	int	tar_pos;
 
 	tmp = *stack_b;
 	get_pos(stack_a);
 	get_pos(stack_b);
 	tar_pos = 0;
-	while (*tmp)
+	while (tmp)
 	{
 		tar_pos = get_best_targ_pos(stack_a, tmp->index, INT_MAX, tar_pos);
 		tmp->targ_pos = tar_pos;

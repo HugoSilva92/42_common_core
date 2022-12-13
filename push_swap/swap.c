@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:17:00 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/12 12:23:10 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/13 23:08:05 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ void	swap(t_list *stack)
 
 void	sa(t_list **stack)
 {
-	swap(*stack)
+	swap(*stack);
 	write(1, "sa\n", 3);
 }
