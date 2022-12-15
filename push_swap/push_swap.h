@@ -6,7 +6,7 @@
 /*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:39:02 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/13 23:17:49 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/15 23:14:07 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <limits.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 typedef struct s_list
 {
@@ -31,8 +32,8 @@ typedef struct s_list
 int	is_nb(char c);
 int	sign(char c);
 int	is_correct_input(char **av);
-int	is_digit(char **av);
-int	amount_zeros(char **av);
+int	is_digit(char *av);
+int	amount_zeros(char *av);
 int	has_duplicates(char **av);
 int	nb_cmp(char *str, char *str1);
 void	error(t_list **stack_a, t_list **stack_b);
@@ -74,5 +75,7 @@ void	r_b(t_list **stack, int *cost);
 void	rrb(t_list **stack);
 void	rb(t_list **stack);
 void	pa(t_list **stack_a, t_list **stack_b);
+void	rotate_stack(t_list **stack_a);
+int	get_lowest_index(t_list **stack);
 
 #endif

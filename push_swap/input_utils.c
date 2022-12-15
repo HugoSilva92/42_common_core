@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:22:12 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/12 11:21:53 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/15 22:24:58 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,23 @@ int	sign(char c)
 int	nb_cmp(char *str, char *str1)
 {
 	int	i;
-	int j;
+	int i1;
 
 	i = 0;
-	j = 0;
+	i1 = 0;
 	if (str[i] == '+')
 	{
-		if (str1[j] != '+')
+		if (str1[i1] != '+')
 			i++;
 	}
-	else if (str1[j] == '+')
-		j++;
-	while (str[i] && str1[j] && str[i] == str1[j])
+	else if (str1[i1] == '+')
+		i1++;
+	while (str[i] && str1[i1] && str[i] == str1[i1])
 	{
 		i++;
-		j++;
+		i1++;
 	}
-	return ((unsigned char)str[i] - (unsigned char)str1[j]);
+	return ((unsigned char)str[i] - (unsigned char)str1[i1]);
 }
 
 int	has_duplicates(char **av)

@@ -6,7 +6,7 @@
 /*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:31:52 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/13 23:01:44 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/15 22:55:33 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,26 @@ void	get_tar_pos(t_list **stack_a, t_list **stack_b)
 		tmp->targ_pos = tar_pos;
 		tmp = tmp->next;
 	}
+}
+
+int	get_lowest_index(t_list **stack)
+{
+	t_list	*tmp;
+	int	min_i;
+	int	min_p;
+
+	tmp = *stack;
+	min_i = INT_MAX;
+	get_pos(stack);
+	min_p = tmp->pos;
+	while (tmp)
+	{
+		if (tmp->index < min_i)
+		{
+			min_i = tmp->index;
+			min_p = tmp->pos;
+		}
+		tmp = tmp->next;
+	}
+	return (min_p);
 }

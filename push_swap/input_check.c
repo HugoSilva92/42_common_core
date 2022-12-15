@@ -6,13 +6,13 @@
 /*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:46:47 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/13 22:59:38 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/15 22:19:48 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	amount_zeros(char **av)
+int	amount_zeros(char *av)
 {
 	int	i;
 
@@ -29,7 +29,7 @@ int	amount_zeros(char **av)
 	}
 }
 
-int	is_digit(char **av)
+int	is_digit(char *av)
 {
 	int	i;
 
@@ -50,7 +50,7 @@ int	is_correct_input(char **av)
 
 	i = 1;
 	flag = 0;
-	while (av[i] != '\0')
+	while (av[i])
 	{
 		if (!is_digit(av[i]))
 			return (0);
@@ -59,7 +59,7 @@ int	is_correct_input(char **av)
 	}
 	if (flag > 1)
 		return (0);
-	if (has_duplicates(av[i]))
+	if (has_duplicates(av))
 		return (0);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:22:15 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/13 22:41:44 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/15 22:30:13 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*initialize(long int nb)
 {
 	t_list	*stack;
 
-	stack = malloc(sizeof(stack));
+	stack = malloc(sizeof *stack);
 	if (!stack)
 		return (NULL);
 	stack -> value = nb;
@@ -78,7 +78,7 @@ int	get_size(t_list *stack)
 
 	i = 0;
 	if (!stack)
-		return (NULL);
+		return (0);
 	while (stack)
 	{
 		stack = stack -> next;

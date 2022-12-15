@@ -6,7 +6,7 @@
 /*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:46:06 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/13 23:02:03 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/15 23:18:24 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,24 +50,25 @@ void	get_index(t_list *stack, int size)
 		min = INT_MIN;
 		while (tmp)
 		{
-			if (tmp -> value == min && tmp -> index == 0)
-				tmp -> index = 1;
-			if (tmp -> value > min && tmp -> index == 0)
+			if (tmp->value == INT_MIN && tmp->index == 0)
+				tmp->index = 1;
+			if (tmp->value > min && tmp->index == 0)
 			{
-				min = tmp -> value;
+				min = tmp->value;
 				highest = tmp;
 				tmp = stack;
 			}
 			else
-				tmp = tmp -> next;
+				tmp = tmp->next;
 		}
-		highest -> index = size;
+		if (highest != NULL)
+			highest->index = size;
 	}
 }
 
 int	is_sorted(t_list *stack)
 {
-	while (stack)
+	while (stack->next != NULL)
 	{
 		if (stack -> value > stack->next->value)
 			return (0);

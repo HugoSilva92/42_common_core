@@ -6,7 +6,7 @@
 /*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:03:12 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/13 22:22:05 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/15 23:03:08 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ void	get_cost(t_list **stack_a, t_list **stack_b)
 
 	tmp_a = *stack_a;
 	tmp_b = *stack_b;
-	size_a = get_size(*stack_a);
-	size_b = get_size(*stack_b);
+	size_a = get_size(tmp_a);
+	size_b = get_size(tmp_b);
 	while (tmp_b)
 	{
 		tmp_b->cost_b = tmp_b->pos;

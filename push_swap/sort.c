@@ -6,7 +6,7 @@
 /*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:37:38 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/13 23:04:34 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/15 22:55:16 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,31 @@ void	small_sort(t_list **stack)
 		sa(stack);
 }
 
+void	rotate_stack(t_list **stack_a)
+{
+	int	min_pos;
+	int	size;
+
+	min_pos = get_lowest_index(stack_a);
+	size = get_size(*stack_a);
+	if (min_pos > (size / 2))
+	{
+			while (min_pos < size)
+			{
+				rra(stack_a);
+				min_pos++;
+			}
+	}
+	else
+	{
+		while (min_pos > 0)
+		{
+			ra(stack_a);
+			min_pos--;
+		}
+	}
+}
+
 void	sort(t_list **stack_a, t_list **stack_b)
 {
 	push_to_b(stack_a, stack_b);
@@ -76,4 +101,6 @@ void	sort(t_list **stack_a, t_list **stack_b)
 		get_cost(stack_a, stack_b);
 		do_less_cost(stack_a, stack_b);
 	}
+	if (!is_sorted(*stack_a))
+		rotate_stack(stack_a);
 }
