@@ -14,34 +14,34 @@
 
 void	r_b(t_list **stack, int *cost)
 {
-	while (*cost != 0)
+	while (*cost)
 	{
 		if (*cost < 0)
 		{
+			(*cost)++;
 			rrb(stack);
-			*cost++;
 		}
 		else if (*cost > 0)
 		{
+			(*cost)--;
 			rb(stack);
-			*cost--;
 		}
 	}
 }
 
 void	r_a(t_list **stack, int *cost)
 {
-	while (*cost != 0)
+	while (*cost)
 	{
 		if (*cost < 0)
 		{
+			(*cost)++;
 			rra(stack);
-			*cost++;
 		}
 		else if (*cost > 0)
 		{
+			(*cost)--;
 			ra(stack);
-			*cost--;
 		}
 	}
 }
@@ -51,8 +51,8 @@ void	rr_both(t_list **stack_a, t_list **stack_b, int *cost_a, int *cost_b)
 	while (*cost_a > 0 && *cost_b > 0)
 	{
 		rr(stack_a, stack_b);
-		*cost_a--;
-		*cost_b--;
+		(*cost_a)--;
+		(*cost_b)--;
 	}
 }
 
@@ -61,8 +61,8 @@ void	rrr_both(t_list **stack_a, t_list **stack_b, int *cost_a, int *cost_b)
 	while (*cost_a < 0 && *cost_b < 0)
 	{
 		rrr(stack_a, stack_b);
-		*cost_a++;
-		*cost_b++;
+		(*cost_a)++;
+		(*cost_b)++;
 	}
 }
 

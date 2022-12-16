@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
+/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:37:38 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/15 22:55:16 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:18:07 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ void	small_sort(t_list **stack)
 	int	max_i;
 
 	max_i = get_max_i(*stack);
+	if (is_sorted(*stack))
+		return ;
 	if ((*stack)->index == max_i)
 		ra(stack);
 	else if ((*stack)->next->index == max_i)

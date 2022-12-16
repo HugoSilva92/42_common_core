@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
+/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:39:02 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/15 23:14:07 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:00:22 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	nb_cmp(char *str, char *str1);
 void	error(t_list **stack_a, t_list **stack_b);
 void free_stack(t_list **stack);
 t_list	*get_values(int ac, char **av);
-int	ft_atoi(const char *str);
+long int	ft_atoi(const char *str);
 t_list	*initialize(long int nb);
 void	add_bottom(t_list **stack, t_list *new);
 t_list	*get_bottom_stack(t_list *stack);

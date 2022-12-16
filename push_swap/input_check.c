@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
+/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 09:46:47 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/15 22:19:48 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/16 13:43:28 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,13 @@ int	amount_zeros(char *av)
 	int	i;
 
 	i = 0;
-	while (av[i])
-	{
-		if (sign(av[i]))
-			i++;
-		while (av[i] && av[i] == '0')
-			i++;
-		if (av[i] != '\0')
-			return (0);
-		return (1);
-	}
+	if (sign(av[i]))
+		i++;
+	while (av[i] && av[i] == '0')
+		i++;
+	if (av[i] != '\0')
+		return (0);
+	return (1);
 }
 
 int	is_digit(char *av)
