@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:46:06 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/16 10:48:24 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/18 22:03:16 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void free_stack(t_list **stack)
 {
 	t_list	*tmp;
 
-	if (!stack ||!(*stack))
+	if (!stack || !(*stack))
 		return ;
 	while (*stack)
 	{

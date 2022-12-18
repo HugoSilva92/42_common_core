@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 18:55:59 by huolivei          #+#    #+#             */
-/*   Updated: 2022/11/22 09:45:30 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/18 23:13:04 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ static char	*ft_get_line(char *str)
 	i = -1;
 	while (str[++i] && str[i] != '\n')
 		line[i] = str[i];
-	line[i] = str[i];
+	if (str[i] == '\n' || str[i] == '\0')
+		line[i] = str[i];
 	return (line);
 }
 

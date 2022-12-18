@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/12 19:39:54 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/16 16:59:51 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/18 23:17:37 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	int		i1;
 	char	*total;
 
-	if (!s1 && !s2)
-		return (ft_strdup(""));
-	if (s1 && !s2)
-		return (ft_strdup(s1));
-	if (!s1 && s2)
-		return (ft_strdup(s2));
 	total = malloc((ft_strlen(s1) + ft_strlen(s2)) + 1 * sizeof(char));
 	if (!total)
 		return (NULL);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:37:38 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/16 14:18:07 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/18 23:36:01 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,11 @@ void	rotate_stack(t_list **stack_a)
 	size = get_size(*stack_a);
 	if (min_pos > (size / 2))
 	{
-			while (min_pos < size)
-			{
-				rra(stack_a);
-				min_pos++;
-			}
+		while (min_pos < size)
+		{
+			rra(stack_a);
+			min_pos++;
+		}
 	}
 	else
 	{

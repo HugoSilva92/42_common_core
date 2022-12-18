@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:53:15 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/16 17:33:25 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/18 23:04:31 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,55 +27,55 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 void	do_moves(t_list **stack_a, t_list **stack_b, char *str)
 {
-	if (ft_strncmp(str, "sa\n", 3) != 0)
+	if (ft_strncmp(str, "sa\n", 3) == 0)
 		sa(stack_a);
-	else if (ft_strncmp(str, "sb\n", 3) != 0)
+	else if (ft_strncmp(str, "sb\n", 3) == 0)
 		sb(stack_b);
-	else if (ft_strncmp(str, "ss\n", 3) != 0)
+	else if (ft_strncmp(str, "ss\n", 3) == 0)
 		ss(stack_a, stack_b);
-	else if (ft_strncmp(str, "pa\n", 3) != 0)
+	else if (ft_strncmp(str, "pa\n", 3) == 0)
 		pa(stack_b, stack_a);
-	else if (ft_strncmp(str, "pb\n", 3) != 0)
+	else if (ft_strncmp(str, "pb\n", 3) == 0)
 		pb(stack_a, stack_b);
-	else if (ft_strncmp(str, "ra\n", 3) != 0)
+	else if (ft_strncmp(str, "ra\n", 3) == 0)
 		ra(stack_a);
-	else if (ft_strncmp(str, "rb\n", 3) != 0)
+	else if (ft_strncmp(str, "rb\n", 3) == 0)
 		rb(stack_b);
-	else if (ft_strncmp(str, "rr\n", 3) != 0)
+	else if (ft_strncmp(str, "rr\n", 3) == 0)
 		rr(stack_a, stack_b);
-	else if (ft_strncmp(str, "rra\n", 4) != 0)
+	else if (ft_strncmp(str, "rra\n", 4) == 0)
 		rra(stack_a);
-	else if (ft_strncmp(str, "rrb\n", 4) != 0)
+	else if (ft_strncmp(str, "rrb\n", 4) == 0)
 		rrb(stack_b);
-	else if (ft_strncmp(str, "rrr\n", 4) != 0)
+	else if (ft_strncmp(str, "rrr\n", 4) == 0)
 		rrr(stack_a, stack_b);
 }
 
 int	move_check(char *str)
 {
-	if (ft_strncmp(str, "sa\n", 3) != 0)
-		return (0);
-	else if (ft_strncmp(str, "sb\n", 3) != 0)
-		return (0);
-	else if (ft_strncmp(str, "ss\n", 3) != 0)
-		return (0);
-	else if (ft_strncmp(str, "pa\n", 3) != 0)
-		return (0);
-	else if (ft_strncmp(str, "pb\n", 3) != 0)
-		return (0);
-	else if (ft_strncmp(str, "ra\n", 3) != 0)
-		return (0);
-	else if (ft_strncmp(str, "rb\n", 3) != 0)
-		return (0);
-	else if (ft_strncmp(str, "rr\n", 3) != 0)
-		return (0);
-	else if (ft_strncmp(str, "rra\n", 4) != 0)
-		return (0);
-	else if (ft_strncmp(str, "rrb\n", 4) != 0)
-		return (0);
-	else if (ft_strncmp(str, "rrr\n", 4) != 0)
-		return (0);
-	return (1);
+	if (ft_strncmp(str, "sa\n", 3) == 0)
+		return (1);
+	else if (ft_strncmp(str, "sb\n", 3) == 0)
+		return (1);
+	else if (ft_strncmp(str, "ss\n", 3) == 0)
+		return (1);
+	else if (ft_strncmp(str, "pa\n", 3) == 0)
+		return (1);
+	else if (ft_strncmp(str, "pb\n", 3) == 0)
+		return (1);
+	else if (ft_strncmp(str, "ra\n", 3) == 0)
+		return (1);
+	else if (ft_strncmp(str, "rb\n", 3) == 0)
+		return (1);
+	else if (ft_strncmp(str, "rr\n", 3) == 0)
+		return (1);
+	else if (ft_strncmp(str, "rra\n", 4) == 0)
+		return (1);
+	else if (ft_strncmp(str, "rrb\n", 4) == 0)
+		return (1);
+	else if (ft_strncmp(str, "rrr\n", 4) == 0)
+		return (1);
+	return (0);
 }
 
 void	getting_str(t_list **stack_a, t_list **stack_b)
@@ -85,9 +85,11 @@ void	getting_str(t_list **stack_a, t_list **stack_b)
 	while(1)
 	{
 		str = get_next_line(0);
+		if (str == NULL)
+			break;
 		if (!move_check(str))
 		{
-			write(2, "ERROR\n", 6);
+			write(2, "NABO!\n", 6);
 			exit(1);
 		}
 		else
@@ -111,6 +113,4 @@ int	main(int ac, char **av)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
 }
