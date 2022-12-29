@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+         #
+#    By: huolivei <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/16 11:29:16 by huolivei          #+#    #+#              #
-#    Updated: 2022/12/18 23:31:44 by huolivei         ###   ########.fr        #
+#    Updated: 2022/12/29 15:02:42 by huolivei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ BONUS = bonus/main_bonus.c bonus/cost.c bonus/initialize.c \
 OBJS_BONUS = $(BONUS:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 RM = rm -rf
 
 all: $(NAME)

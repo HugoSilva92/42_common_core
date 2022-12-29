@@ -6,7 +6,7 @@
 /*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/19 01:14:32 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/29 15:00:55 by huolivei         ###   ########.fr       */
+/*   Updated: 2022/12/29 15:40:30 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <unistd.h>
-# include "push_swap.h"
+//# include "push_swap.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
