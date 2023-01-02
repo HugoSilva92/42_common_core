@@ -6,7 +6,7 @@
 /*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:53:15 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/29 16:29:56 by huolivei         ###   ########.fr       */
+/*   Updated: 2023/01/02 14:45:42 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,15 +55,20 @@ void	do_moves(t_list **stack_a, t_list **stack_b, char *str)
 void	getting_str(t_list **stack_a, t_list **stack_b)
 {
 	char	*str;
+	int i = 1;
 
-	str = get_next_line(0);
 	while(1)
 	{
+		str = get_next_line(0);
 		if (str == NULL)
 			break;
 		else
-			do_moves(stack_a, stack_b, str);
-		str = get_next_line(0);
+		{
+			printf("%d\n", i);
+			printf("%d\n", (*stack_a)->value);
+			printf("%d\n", (*stack_b)->value);
+		}
+		i++;
 	}
 }
 
@@ -84,12 +89,13 @@ int	main(int ac, char **av)
 		stack_a = stack_a->next;
 	}*/
 	getting_str(&stack_a, &stack_b);
-	while (stack_a->next)
+	/*while (stack_a->next)
 	{
-		printf("%d", stack_a->value);
+		printf("%dA      %dB\n", stack_a->value, stack_b->value);
 		stack_a = stack_a->next;
+		stack_b = stack_b->next;
 	}
-	printf("%d", stack_a->value);
+	printf("%dA        %dB\n", stack_a->value, stack_b->value);*/
 	/*if (is_sorted(stack_a) && stack_b == NULL)
 		write(1, "OK\n", 3);
 	else

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
+/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 14:06:58 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/18 22:24:05 by huolivei         ###   ########.fr       */
+/*   Updated: 2023/01/02 12:06:06 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,11 @@ void	push(t_list **stack_a, t_list **stack_b)
 void	pb(t_list **stack_a, t_list **stack_b)
 {
 	push(stack_a, stack_b);
+	printf("pb\n");
 }
 
 void	pa(t_list **stack_a, t_list **stack_b)
 {
 	push(stack_b, stack_a);
+	printf("pa\n");
 }
