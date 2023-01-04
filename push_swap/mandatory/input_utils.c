@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hugo <hugo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:22:12 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/16 14:00:11 by huolivei         ###   ########.fr       */
+/*   Updated: 2023/01/04 00:56:00 by hugo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	sign(char c)
 int	nb_cmp(char *str, char *str1)
 {
 	int	i;
-	int i1;
+	int	i1;
 
 	i = 0;
 	i1 = 0;

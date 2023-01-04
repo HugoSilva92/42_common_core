@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cost.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
+/*   By: hugo <hugo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 16:03:12 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/15 23:03:08 by huolivei         ###   ########.fr       */
+/*   Updated: 2023/01/04 00:53:03 by hugo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	get_cost(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp_a;
 	t_list	*tmp_b;
-	int	size_a;
-	int	size_b;
+	int		size_a;
+	int		size_b;
 
 	tmp_a = *stack_a;
 	tmp_b = *stack_b;
@@ -45,9 +45,9 @@ void	get_cost(t_list **stack_a, t_list **stack_b)
 void	do_less_cost(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*tmp;
-	int	cost_a;
-	int	cost_b;
-	int	less_mov;
+	int		cost_a;
+	int		cost_b;
+	int		less_mov;
 
 	tmp = *stack_b;
 	less_mov = INT_MAX;

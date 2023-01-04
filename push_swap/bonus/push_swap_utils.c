@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hugo <hugo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 10:46:06 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/16 10:48:24 by huolivei         ###   ########.fr       */
+/*   Updated: 2023/01/04 00:25:15 by hugo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void free_stack(t_list **stack)
+void	free_stack(t_list **stack)
 {
 	t_list	*tmp;
 
@@ -20,7 +20,7 @@ void free_stack(t_list **stack)
 		return ;
 	while (*stack)
 	{
-		tmp = (*stack) -> next;
+		tmp = (*stack)->next;
 		free (*stack);
 		*stack = tmp;
 	}

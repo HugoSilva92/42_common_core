@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hugo <hugo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:53:15 by huolivei          #+#    #+#             */
-/*   Updated: 2023/01/02 12:23:34 by huolivei         ###   ########.fr       */
+/*   Updated: 2023/01/04 00:55:32 by hugo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int ac, char **av)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	int	stack_size;
+	int		stack_size;
 
 	if (ac < 2)
 		return (0);
@@ -37,11 +37,12 @@ int	main(int ac, char **av)
 	stack_size = get_size(stack_a);
 	get_index(stack_a, stack_size + 1);
 	push_swap(&stack_a, &stack_b, stack_size);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
+}
+
 	/*while (stack_a)
 	{
 		printf("%d\n", stack_a->value);
 		stack_a = stack_a->next;
 	}*/
-	free_stack(&stack_a);
-	free_stack(&stack_b);
-}

@@ -6,7 +6,7 @@
 /*   By: hugo <hugo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:53:15 by huolivei          #+#    #+#             */
-/*   Updated: 2023/01/04 00:06:56 by hugo             ###   ########.fr       */
+/*   Updated: 2023/01/04 00:24:01 by hugo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,15 @@ void	do_moves(t_list **stack_a, t_list **stack_b, char *str)
 		rrr(stack_a, stack_b);
 }
 
-
 void	getting_str(t_list **stack_a, t_list **stack_b)
 {
 	char	*str;
 
-	while(1)
+	while (1)
 	{
 		str = get_next_line(0);
 		if (str == NULL)
-			break;
+			break ;
 		else
 			do_moves(stack_a, stack_b, str);
 	}

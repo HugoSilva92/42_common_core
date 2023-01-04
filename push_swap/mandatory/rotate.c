@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
+/*   By: hugo <hugo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:05:13 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/13 22:55:15 by huolivei         ###   ########.fr       */
+/*   Updated: 2023/01/04 00:57:00 by hugo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	rotate(t_list **stack)
 void	ra(t_list **stack)
 {
 	rotate(stack);
-	write(1,"ra\n", 3);
+	write(1, "ra\n", 3);
 }
 
 void	rr(t_list **stack_a, t_list **stack_b)
@@ -40,5 +40,5 @@ void	rr(t_list **stack_a, t_list **stack_b)
 void	rb(t_list **stack)
 {
 	rotate(stack);
-	write(1,"rb\n", 3);
+	write(1, "rb\n", 3);
 }

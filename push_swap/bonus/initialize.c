@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   initialize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
+/*   By: hugo <hugo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 11:22:15 by huolivei          #+#    #+#             */
-/*   Updated: 2022/12/18 23:37:54 by huolivei         ###   ########.fr       */
+/*   Updated: 2023/01/04 00:38:34 by hugo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*initialize(long int nb)
 {
 	t_list	*stack;
 
-	stack = malloc(sizeof *stack);
+	stack = malloc(sizeof(*stack));
 	if (!stack)
 		return (NULL);
 	stack -> value = nb;
