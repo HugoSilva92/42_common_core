@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugo <hugo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:49:27 by huolivei          #+#    #+#             */
-/*   Updated: 2023/01/03 23:56:30 by hugo             ###   ########.fr       */
+/*   Updated: 2023/01/04 21:40:50 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,18 @@ void	reverse_rotate(t_list **stack)
 void	rra(t_list **stack)
 {
 	reverse_rotate(stack);
+	write(1, "rra\n", 4);
 }
 
 void	rrr(t_list **stack_a, t_list **stack_b)
 {
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
+	write(1, "rrr\n", 4);
 }
 
 void	rrb(t_list **stack)
 {
 	reverse_rotate(stack);
+	write(1, "rrb\n", 4);
 }

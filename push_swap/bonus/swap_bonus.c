@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugo <hugo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:17:00 by huolivei          #+#    #+#             */
-/*   Updated: 2023/01/03 23:56:41 by hugo             ###   ########.fr       */
+/*   Updated: 2023/01/04 21:42:26 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,18 @@ void	swap(t_list *stack)
 void	sa(t_list **stack)
 {
 	swap(*stack);
+	write(1, "sa\n", 3);
 }
 
 void	sb(t_list **stack)
 {
 	swap(*stack);
+	write(1, "sb\n", 3);
 }
 
 void	ss(t_list **stack_a, t_list **stack_b)
 {
 	swap(*stack_a);
 	swap(*stack_b);
+	write(1, "ss\n", 3);
 }

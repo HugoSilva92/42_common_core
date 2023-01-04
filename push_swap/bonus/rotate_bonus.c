@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hugo <hugo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: huolivei <huolivei <marvin@42.fr>>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 13:05:13 by huolivei          #+#    #+#             */
-/*   Updated: 2023/01/03 23:04:34 by hugo             ###   ########.fr       */
+/*   Updated: 2023/01/04 21:42:50 by huolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,18 @@ void	rotate(t_list **stack)
 void	ra(t_list **stack)
 {
 	rotate(stack);
+	write(1, "ra\n", 3);
 }
 
 void	rr(t_list **stack_a, t_list **stack_b)
 {
 	rotate(stack_a);
 	rotate(stack_b);
+	write(1, "rr\n", 3);
 }
 
 void	rb(t_list **stack)
 {
 	rotate(stack);
+	write(1, "rb\n", 3);
 }
