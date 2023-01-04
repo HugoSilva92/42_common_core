@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hugo <hugo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 12:49:27 by huolivei          #+#    #+#             */
-/*   Updated: 2023/01/02 12:05:27 by huolivei         ###   ########.fr       */
+/*   Updated: 2023/01/03 23:56:30 by hugo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	reverse_rotate(t_list **stack)
 void	rra(t_list **stack)
 {
 	reverse_rotate(stack);
-	printf("rra\n");
 }
 
 void	rrr(t_list **stack_a, t_list **stack_b)

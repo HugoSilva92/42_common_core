@@ -18,16 +18,16 @@ SRCS = mandatory/main.c mandatory/cost.c mandatory/initialize.c \
 	mandatory/reverse_rotate.c mandatory/rotate.c mandatory/sort.c \
 	mandatory/swap.c mandatory/position.c
 OBJS = $(SRCS:.c=.o)
-BONUS = bonus/main_bonus.c bonus/cost.c bonus/initialize.c \
+BONUS = bonus/main_bonus.c bonus/initialize.c \
 	bonus/input_check.c bonus/input_utils.c \
-	bonus/move_stack.c bonus/push_bonus.c bonus/push_swap_utils.c \
-	bonus/reverse_rotate_bonus.c bonus/rotate_bonus.c bonus/sort.c \
-	bonus/swap_bonus.c bonus/position.c bonus/get_next_line.c \
+	bonus/push_bonus.c bonus/push_swap_utils.c \
+	bonus/reverse_rotate_bonus.c bonus/rotate_bonus.c \
+	bonus/swap_bonus.c bonus/get_next_line.c \
 	bonus/get_next_line_utils.c
 OBJS_BONUS = $(BONUS:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 
 all: $(NAME)

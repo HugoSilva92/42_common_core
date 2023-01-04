@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: huolivei <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hugo <hugo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:53:15 by huolivei          #+#    #+#             */
-/*   Updated: 2023/01/02 14:45:42 by huolivei         ###   ########.fr       */
+/*   Updated: 2023/01/04 00:06:56 by hugo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	do_moves(t_list **stack_a, t_list **stack_b, char *str)
 	else if (ft_strcmp(str, "ss\n") == 0)
 		ss(stack_a, stack_b);
 	else if (ft_strcmp(str, "pa\n") == 0)
-		pa(stack_b, stack_a);
+		pa(stack_a, stack_b);
 	else if (ft_strcmp(str, "pb\n") == 0)
 		pb(stack_a, stack_b);
 	else if (ft_strcmp(str, "ra\n") == 0)
@@ -55,7 +55,6 @@ void	do_moves(t_list **stack_a, t_list **stack_b, char *str)
 void	getting_str(t_list **stack_a, t_list **stack_b)
 {
 	char	*str;
-	int i = 1;
 
 	while(1)
 	{
@@ -63,12 +62,7 @@ void	getting_str(t_list **stack_a, t_list **stack_b)
 		if (str == NULL)
 			break;
 		else
-		{
-			printf("%d\n", i);
-			printf("%d\n", (*stack_a)->value);
-			printf("%d\n", (*stack_b)->value);
-		}
-		i++;
+			do_moves(stack_a, stack_b, str);
 	}
 }
 
@@ -83,21 +77,11 @@ int	main(int ac, char **av)
 		error(NULL, NULL);
 	stack_a = get_values(ac, av);
 	stack_b = NULL;
-	/*while (stack_a)
-	{
-		printf("%d", stack_a->value);
-		stack_a = stack_a->next;
-	}*/
 	getting_str(&stack_a, &stack_b);
-	/*while (stack_a->next)
-	{
-		printf("%dA      %dB\n", stack_a->value, stack_b->value);
-		stack_a = stack_a->next;
-		stack_b = stack_b->next;
-	}
-	printf("%dA        %dB\n", stack_a->value, stack_b->value);*/
-	/*if (is_sorted(stack_a) && stack_b == NULL)
+	if (is_sorted(stack_a) && stack_b == NULL)
 		write(1, "OK\n", 3);
 	else
-		write(1, "KO\n", 3);*/
+		write(1, "KO\n", 3);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 }
